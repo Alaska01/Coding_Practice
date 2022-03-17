@@ -9,15 +9,6 @@
 
 
 def find_duplicates(arr1, arr2)
-    # your code goes here
-    # let arr3 = []
-    #   arr1.each do |x| 
-    #      if(arr2.include(x))
-    #        arr3 << x
-    #   end
-      
-    #    return arr3.sort
-
     arr3 = [];
     arr1.each do |x|
       if(arr2.include?(x))
