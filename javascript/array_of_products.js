@@ -13,9 +13,10 @@ input:  arr = [2, 7, 3, 4]
 output: [84, 24, 56, 42]
 */
 
-
+console.time()
 function arrayOfArrayProducts(arr) {
     // your code goes here
+   
 
     let output= []
     let newArr = [...arr]
@@ -43,7 +44,9 @@ function arrayOfArrayProducts(arr) {
          })
     }
 
+    
     return output;
 }
 
-console.log(arrayOfArrayProducts([2, 7, 3, 4]))
+console.timeEnd()
+console.log(arrayOfArrayProducts([2, 7]))
