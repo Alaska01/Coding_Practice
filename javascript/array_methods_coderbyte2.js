@@ -6,8 +6,7 @@ This link is an expanation https://en.wikipedia.org/wiki/Ternary_numeral_system
 function mathsChallenge(num){
 
   let remainder =[]
-  let loopLength = num/ 3;
-
+  
   if(num < 3){
     return remainder.push(num);
   }
