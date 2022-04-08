@@ -11,8 +11,8 @@ function ArrayChallenge(strArr) {
   let secondElement =JSON.parse(strArr[1])
 
 
-  let output = firstElement.map((acc, index, arr)=>{
-    return (acc + secondElement[index])
+  let output = firstElement.map((value, index, arr)=>{
+    return (value + secondElement[index])
   })
 
   return output;
