@@ -37,8 +37,7 @@ function WordSplit(strArr) {
 
     let finalFirstWord =firstWord.join('')
     let finalSecondWord = secondWord.join('')
-    // console.log(finalFirstWord)
-    // console.log(finalSecondWord)
+  
     if(findTwoWords.includes(finalFirstWord) && findTwoWords.includes(finalSecondWord)){
       result.push(finalFirstWord)
       result.push(finalSecondWord)

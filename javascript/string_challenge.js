@@ -1,50 +1,68 @@
 
 // Kindly go through the image folder and use the string challenge image to understand the question and possible solution
-function StringChallenge(str){
+function stringChallenge(str) {
+  // Set initial counter variable to 0
+  var i = 0;
+  // Split the string into an array of letters
+  var letters = str.split('');
+  // Start do loop.
+  do {
+    // If the first and second letter in the array match any of the pairs
+    if (
+      (letters[i] == 'a' && letters[i + 1] == 'b') ||
+      (letters[i] == 'b' && letters[i + 1] == 'a')
+    ) {
+      // Remove the second letter
+      letters.splice(i + 1, 1);
+      // Transform the first letter
+      letters[i] = 'c';
+      // Set the counter back to 0 so we can start at the beginning again
+      i = 0;
+    } else if (
+      (letters[i] == 'b' && letters[i + 1] == 'c') ||
+      (letters[i] == 'c' && letters[i + 1] == 'b')
+    ) {
+      letters.splice(i + 1, 1);
+      letters[i] = 'a';
+      i = 0;
+    } else if (
+      (letters[i] == 'c' && letters[i + 1] == 'a') ||
+      (letters[i] == 'a' && letters[i + 1] == 'c')
+    ) {
+      letters.splice(i + 1, 1);
+      letters[i] = 'b';
+      i = 0;
+      // If no conditions are met, incremenet the counter
+    } else {
+      i++;
+    }
+  } while (i < letters.length);
+  // Return the length of the transformed string
+  return letters.length;
+}
 
-  let arrStr =str.split('')
-
-  let newArr = []
-  let condition= arrStr.length % 3
-  for(let i=0; i< arrStr.length; i++){
-
-      for(let j =i +1; j < arrStr.length; j++){
-
-          for(let k = i + 2; k < arrStr.length; k++){
-
-              if(arrStr.length <=3){
-                  if(arrStr[i] != arrStr[j]){
-
-                    newArr.push(arrStr[k])
-                  }
-              }
-
-              // console.log(arrStr % 3)
-              if(arrStr.length > 3 && (condition) < 2){
-
-                let sliceposition= arrStr % 3
-                let tap = k +1
-                if(arrStr[i] != arrStr[j]){
-
-                  
-                  newArr.push(arrStr[k])
-
-                  i= i +1;
-                }
-
-                // break;
-
-              }
-
-          }
-
-      }
+console.log(stringChallenge('cccc'));
 
 
+
+function stringChallenge2(str) {
+  var replacements = {
+    ab: 'c',
+    ac: 'b',
+    bc: 'a',
+    ba: 'c',
+    ca: 'b',
+    cb: 'a',
+  };
+
+
+  var original, key;
+  while (str != original) {
+    original = str;
+    for (key in replacements) str = str.replace(key, replacements[key]);
   }
-
-  return newArr
+  return str.length;
 
 }
 
-console.log(StringChallenge('abcabc'))
+console.log(stringChallenge2('cccc'));
